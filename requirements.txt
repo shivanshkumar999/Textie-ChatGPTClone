@@ -9,7 +9,7 @@ click==8.1.7
 colorama==0.4.6
 distlib==0.3.7
 docopt==0.6.2
-Flask==2.3.3
+Flask==2.2.3
 frozenlist==1.4.0
 hugchat==0.3.7
 idna==3.4
