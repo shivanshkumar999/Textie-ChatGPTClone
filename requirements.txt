@@ -9,7 +9,6 @@ click==8.1.7
 colorama==0.4.6
 distlib==0.3.7
 docopt==0.6.2
-filelock==3.12.4
 Flask==2.3.3
 frozenlist==1.4.0
 hugchat==0.3.7
