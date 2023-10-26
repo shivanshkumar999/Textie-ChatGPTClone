@@ -1,4 +1,4 @@
-from flask import Flask, jsonify, render_template, request
+from flask import Flask, render_template, request
 from hugchat.login import Login
 from  hugchat  import hugchat
 
@@ -11,20 +11,21 @@ cookie_path_dir = "./cookies_snapshot"
 sign.saveCookiesToDir(cookie_path_dir)
 
 output=[]
+query_result=''
 @app.route('/', methods=['GET','POST'])
 def index():
     if request.method=='POST':
         query = request.form.get('query')
           
         chatbot = hugchat.ChatBot(cookies=cookies.get_dict())
-        query_result = chatbot.query(query)
+        query_result = str(chatbot.query(query))
 
         output.append([query])
-        output.append([query_result.text])
+        output.append([query_result])
 
         return render_template('index.html', output=output)
-    " ".join(output)    
-    return render_template('index.html', output=output)
+    # " ".join(output)    
+    return render_template('index.html')
 
 @app.route('/deletechat')
 def deletechat():
